@@ -6,7 +6,6 @@ import logo from "../pictures/red-cross-mark-clipart-circle.png";
 import classes from "./ParkingSpot.module.css";
 
 const ParkingSpot = ({ area, status, side, id }) => {
-  let stam = "../pictures/green-v-with-circle.png";
   return (
     <Fragment>
       <div className={classes["container"]}>
@@ -17,7 +16,6 @@ const ParkingSpot = ({ area, status, side, id }) => {
         <img
           className={classes[`green-v-${side}`]}
           src={status === "free" ? greenVlogo : redCrossLogo}
-          // src={require("../pictures/green-v-with-circle.png")}
         />
       </div>
 

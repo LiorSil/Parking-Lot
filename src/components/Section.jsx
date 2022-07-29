@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { createSection } from "../utils/createSection";
-import "./Section.css";
+import classes from "./Section.module.css";
 const Section = (props) => {
   const { L_Array, R_Array } = createSection(
     props.amount,
@@ -10,10 +10,10 @@ const Section = (props) => {
 
   return (
     <Fragment>
-      <td className="left-spots">
+      <td className={classes.left_spots}>
         <ul>{L_Array}</ul>
       </td>
-      <td className="right-spots">
+      <td className={classes.right_spots}>
         <ul>{R_Array}</ul>
       </td>
     </Fragment>

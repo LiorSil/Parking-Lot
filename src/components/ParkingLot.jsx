@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect, useCallback } from "react";
 import Section from "./Section";
-import "./ParkingLot.css";
+import classes from "./ParkingLot.module.css";
 import CarRegister from "./CarRegister";
 import Button from "./Button";
 import SectionsList from "./SectionsList";
@@ -51,7 +51,8 @@ const ParkingLot = () => {
       )}
       <table>
         <tbody>
-          <tr className="parkinglot-table">{content}</tr>
+          {/* <tr className="parkinglot-table">{content}</tr> */}
+          <tr className={classes.parkinglot_table}>{content}</tr>
         </tbody>
       </table>
     </Fragment>

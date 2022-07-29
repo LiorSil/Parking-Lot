@@ -1,32 +1,29 @@
 import React, { useState, Fragment } from "react";
 import Button from "./Button";
+import classes from "./FormRegisterCar.module.css";
 
 const FormRegisterCar = ({ occupyPark, onClose }) => {
   const [occupiedPark, setOccupiedPark] = useState({ sec: "", id: 0 });
 
   const radioButtonChosenHandeler = (e) => {
-    console.log("Set Chosen: " + e.target.value);
-    setOccupiedPark((occupiedPark) => ({
+    setOccupiedPark(() => ({
       ...occupiedPark,
       sec: e.target.value,
     }));
   };
   const numberOfParkingChosenHander = (e) => {
-    console.log("Radio Button Chosen: " + e.target.value);
     let id = parseInt(e.target.value);
-    setOccupiedPark((occupiedPark) => ({
+    setOccupiedPark(() => ({
       ...occupiedPark,
       id: id,
     }));
   };
-  let sec = occupiedPark.sec === "" ? "A" : occupiedPark.sec;
-  let id = occupiedPark.id;
-  console.log("id: ", id, "sec: ", sec);
-  const occupyParkHandler = (event) => {
-    // event.preventDefault();
-    // debugger;
-    occupyPark(sec, id);
-    console.log(sec, id);
+
+  const occupyParkHandler = () => {
+    occupyPark(
+      occupiedPark.sec === "" ? "A" : occupiedPark.sec,
+      occupiedPark.id
+    );
     onClose();
   };
 
@@ -35,21 +32,20 @@ const FormRegisterCar = ({ occupyPark, onClose }) => {
       <form>
         <h6>Which Section Car Parking ?</h6>
         <input
+          name="SectionName"
           type="radio"
           id="A"
-          name="SectionName"
-          value="A"
-          checked
           onChange={radioButtonChosenHandeler}
+          checked
         />
         <label>
           <span />
           Section A <br />
         </label>
         <input
+          name="SectionName"
           type="radio"
           id="B"
-          name="SectionName"
           value="B"
           onChange={radioButtonChosenHandeler}
         />
@@ -59,9 +55,9 @@ const FormRegisterCar = ({ occupyPark, onClose }) => {
           Section B<br />
         </label>
         <input
+          name="SectionName"
           type="radio"
           id="C"
-          name="SectionName"
           value="C"
           onChange={radioButtonChosenHandeler}
         />
@@ -70,9 +66,9 @@ const FormRegisterCar = ({ occupyPark, onClose }) => {
           Section C <br />
         </label>
         <input
+          name="SectionName"
           type="radio"
           id="D"
-          name="SectionName"
           value="D"
           onChange={radioButtonChosenHandeler}
         />
