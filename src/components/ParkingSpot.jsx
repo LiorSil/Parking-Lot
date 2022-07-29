@@ -1,16 +1,25 @@
 import React, { Fragment } from "react";
+import greenVlogo from "../pictures/green-v-with-circle.png";
+import redCrossLogo from "../pictures/red-cross-mark-clipart-circle.png";
 // import "./ParkingSpot.css";
+import logo from "../pictures/red-cross-mark-clipart-circle.png";
 import classes from "./ParkingSpot.module.css";
 
 const ParkingSpot = ({ area, status, side, id }) => {
-  // const { area, status, side, id } = props;
-  // const sideClass = `{}`
+  let stam = "../pictures/green-v-with-circle.png";
   return (
     <Fragment>
-      <img
-        className={classes[`side-${side}`]}
-        src={require("../pictures/parking-single-spot.jpeg")}
-      />
+      <div className={classes["container"]}>
+        <img
+          className={classes[`side-${side}`]}
+          src={require("../pictures/parking-single-spot.jpeg")}
+        />
+        <img
+          className={classes[`green-v-${side}`]}
+          src={status === "free" ? greenVlogo : redCrossLogo}
+          // src={require("../pictures/green-v-with-circle.png")}
+        />
+      </div>
 
       <p className={classes[`spot-text-${side}`]}>
         {area}

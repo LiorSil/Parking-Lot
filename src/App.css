@@ -10,11 +10,3 @@
   color: white;
   white-space: nowrap;
 }
-
-.incoming-car {
-  display: flex;
-  position: relative;
-  left: 350px;
-  right: 350px;
-  top: 100px
-}

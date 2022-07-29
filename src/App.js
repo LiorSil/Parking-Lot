@@ -1,16 +1,16 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import Button from "./components/Button";
 import ParkingLot from "./components/ParkingLot";
+import CarRegister from "./components/CarRegister";
 
 function App() {
-  const [parkingStatus, setparkingStatus] = useState("free");
-
   return (
-    <div className="App">
-      <Button>Insert Vehicle</Button>
-      <ParkingLot className={"ParkingLot"} />
-    </div>
+    <Fragment>
+      <div className="App">
+        <ParkingLot />
+      </div>
+    </Fragment>
   );
 }
 
